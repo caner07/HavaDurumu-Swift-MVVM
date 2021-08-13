@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		250EBC1D26C6571E00D7FD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC1C26C6571E00D7FD76 /* AppDelegate.swift */; };
 		250EBC1F26C6571E00D7FD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC1E26C6571E00D7FD76 /* SceneDelegate.swift */; };
-		250EBC2126C6571E00D7FD76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC2026C6571E00D7FD76 /* ViewController.swift */; };
+		250EBC2126C6571E00D7FD76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC2026C6571E00D7FD76 /* HomeViewController.swift */; };
 		250EBC2426C6571E00D7FD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250EBC2226C6571E00D7FD76 /* Main.storyboard */; };
 		250EBC2626C6571F00D7FD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250EBC2526C6571F00D7FD76 /* Assets.xcassets */; };
 		250EBC2926C6571F00D7FD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250EBC2726C6571F00D7FD76 /* LaunchScreen.storyboard */; };
+		72E8ABB0804225DF67382A9B /* Pods_HavaDurumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		250EBC1926C6571E00D7FD76 /* HavaDurumu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HavaDurumu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250EBC1C26C6571E00D7FD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		250EBC1E26C6571E00D7FD76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		250EBC2026C6571E00D7FD76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		250EBC2026C6571E00D7FD76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		250EBC2326C6571E00D7FD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		250EBC2526C6571F00D7FD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		250EBC2826C6571F00D7FD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		250EBC2A26C6571F00D7FD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavaDurumu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27761CBEDEA10C74DC59772F /* Pods-HavaDurumu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.release.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.release.xcconfig"; sourceTree = "<group>"; };
+		E6737A9C54B42732BD735ADF /* Pods-HavaDurumu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.debug.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E8ABB0804225DF67382A9B /* Pods_HavaDurumu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180911B89DA872B0B1860917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6737A9C54B42732BD735ADF /* Pods-HavaDurumu.debug.xcconfig */,
+				27761CBEDEA10C74DC59772F /* Pods-HavaDurumu.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		250EBC1026C6571E00D7FD76 = {
 			isa = PBXGroup;
 			children = (
 				250EBC1B26C6571E00D7FD76 /* HavaDurumu */,
 				250EBC1A26C6571E00D7FD76 /* Products */,
+				180911B89DA872B0B1860917 /* Pods */,
+				71950A3DBF671E58DD8FF678 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +72,55 @@
 		250EBC1B26C6571E00D7FD76 /* HavaDurumu */ = {
 			isa = PBXGroup;
 			children = (
+				250EBC3326C6574A00D7FD76 /* Service */,
+				250EBC3226C6574500D7FD76 /* View */,
+				250EBC3126C6573E00D7FD76 /* ViewModel */,
+				250EBC3026C6573800D7FD76 /* Model */,
 				250EBC1C26C6571E00D7FD76 /* AppDelegate.swift */,
 				250EBC1E26C6571E00D7FD76 /* SceneDelegate.swift */,
-				250EBC2026C6571E00D7FD76 /* ViewController.swift */,
 				250EBC2226C6571E00D7FD76 /* Main.storyboard */,
 				250EBC2526C6571F00D7FD76 /* Assets.xcassets */,
 				250EBC2726C6571F00D7FD76 /* LaunchScreen.storyboard */,
 				250EBC2A26C6571F00D7FD76 /* Info.plist */,
 			);
 			path = HavaDurumu;
+			sourceTree = "<group>";
+		};
+		250EBC3026C6573800D7FD76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		250EBC3126C6573E00D7FD76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		250EBC3226C6574500D7FD76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				250EBC2026C6571E00D7FD76 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		250EBC3326C6574A00D7FD76 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		71950A3DBF671E58DD8FF678 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 250EBC2D26C6571F00D7FD76 /* Build configuration list for PBXNativeTarget "HavaDurumu" */;
 			buildPhases = (
+				9337186827EFB66CB32F6D47 /* [CP] Check Pods Manifest.lock */,
 				250EBC1526C6571E00D7FD76 /* Sources */,
 				250EBC1626C6571E00D7FD76 /* Frameworks */,
 				250EBC1726C6571E00D7FD76 /* Resources */,
+				CDAE3655A6A63981CC86F96C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,12 +190,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9337186827EFB66CB32F6D47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HavaDurumu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDAE3655A6A63981CC86F96C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		250EBC1526C6571E00D7FD76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				250EBC2126C6571E00D7FD76 /* ViewController.swift in Sources */,
+				250EBC2126C6571E00D7FD76 /* HomeViewController.swift in Sources */,
 				250EBC1D26C6571E00D7FD76 /* AppDelegate.swift in Sources */,
 				250EBC1F26C6571E00D7FD76 /* SceneDelegate.swift in Sources */,
 			);
@@ -216,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,12 +383,14 @@
 		};
 		250EBC2E26C6571F00D7FD76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6737A9C54B42732BD735ADF /* Pods-HavaDurumu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QZCS4YFDU;
 				INFOPLIST_FILE = HavaDurumu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +398,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.canerkaya.HavaDurumu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		250EBC2F26C6571F00D7FD76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27761CBEDEA10C74DC59772F /* Pods-HavaDurumu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QZCS4YFDU;
 				INFOPLIST_FILE = HavaDurumu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.canerkaya.HavaDurumu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
