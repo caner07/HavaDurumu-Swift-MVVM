@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,27 +14,33 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="HavaDurumu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BZC-qj-Wqj">
                                 <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <color key="backgroundColor" name="DayBlue"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9nz-fX-CtA">
-                                    <rect key="frame" x="0.0" y="111.66666828502309" width="428" height="75"/>
+                                    <rect key="frame" x="0.0" y="144.66666828502309" width="428" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ9-Ew-n2k">
-                                            <rect key="frame" x="393" y="8" width="20" height="59"/>
+                                            <rect key="frame" x="392.33333333333331" y="8" width="20.666666666666686" height="59"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="kzO-lv-xUc"/>
                                             </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                            </state>
                                             <connections>
                                                 <action selector="addCityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPn-YY-UHL"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" name="DayBlue"/>
                                     <constraints>
                                         <constraint firstItem="GZ9-Ew-n2k" firstAttribute="centerY" secondItem="9nz-fX-CtA" secondAttribute="centerY" id="HT1-ve-5Up"/>
                                         <constraint firstItem="GZ9-Ew-n2k" firstAttribute="centerY" secondItem="9nz-fX-CtA" secondAttribute="centerY" id="W6V-ve-4ht"/>
@@ -43,29 +50,29 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityNames" rowHeight="63" id="lbF-7S-Zka" customClass="CityNamesTableViewCell" customModule="HavaDurumu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="63"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityNames" rowHeight="96" id="lbF-7S-Zka" customClass="CityNamesTableViewCell" customModule="HavaDurumu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbF-7S-Zka" id="A0o-at-wDq">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="63"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvm-iu-TFo">
-                                                    <rect key="frame" x="395" y="11" width="13" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="392.66666666666669" y="11" width="15.333333333333314" height="96"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-TI-pFZ">
-                                                    <rect key="frame" x="357" y="14" width="30" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-TI-pFZ">
+                                                    <rect key="frame" x="347.66666666666669" y="41" width="37" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şehir İsim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25a-ZM-I4e">
-                                                    <rect key="frame" x="20" y="19" width="105" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="19" width="130.33333333333334" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -90,11 +97,11 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="DayBlue"/>
                         <constraints>
                             <constraint firstItem="BZC-qj-Wqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tS-9R-zdY"/>
                             <constraint firstItem="BZC-qj-Wqj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ub7-NS-Ebu"/>
-                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="o5i-e2-Ocx"/>
+                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j2F-rV-E30"/>
                             <constraint firstItem="BZC-qj-Wqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sWV-YR-4Kw"/>
                         </constraints>
                     </view>
@@ -107,14 +114,38 @@
             </objects>
             <point key="canvasLocation" x="765.42056074766356" y="81.641468682505405"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="NBT-Im-Ift">
+            <objects>
+                <viewController id="JYm-0Z-Un2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sfr-be-VvX">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ewd-ar-ZDS"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Blv-Lo-C6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="91"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgt-Si-DNG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2b-BU-4WM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="6gQ-Gk-1vk">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6gQ-Gk-1vk">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="DayBlue"/>
+                        <color key="tintColor" name="DayBlue"/>
+                        <color key="barTintColor" name="DayBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -127,8 +158,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="DayBlue">
+            <color red="0.40161240100000001" green="0.60618323090000004" blue="0.86277592179999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
