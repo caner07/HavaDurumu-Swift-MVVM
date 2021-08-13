@@ -1,27 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p2b-BU-4WM">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Hava Durumu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="HavaDurumu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BZC-qj-Wqj">
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="9nz-fX-CtA">
+                                    <rect key="frame" x="0.0" y="111.66666828502309" width="428" height="75"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ9-Ew-n2k">
+                                            <rect key="frame" x="393" y="8" width="20" height="59"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="kzO-lv-xUc"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="addCityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPn-YY-UHL"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="GZ9-Ew-n2k" firstAttribute="centerY" secondItem="9nz-fX-CtA" secondAttribute="centerY" id="HT1-ve-5Up"/>
+                                        <constraint firstItem="GZ9-Ew-n2k" firstAttribute="centerY" secondItem="9nz-fX-CtA" secondAttribute="centerY" id="W6V-ve-4ht"/>
+                                        <constraint firstAttribute="trailing" secondItem="GZ9-Ew-n2k" secondAttribute="trailing" constant="15" id="XIr-hg-9VT"/>
+                                        <constraint firstAttribute="bottom" secondItem="GZ9-Ew-n2k" secondAttribute="bottom" constant="8" id="ZRh-GS-vaW"/>
+                                        <constraint firstItem="GZ9-Ew-n2k" firstAttribute="top" secondItem="9nz-fX-CtA" secondAttribute="top" constant="8" id="y9y-Qz-Odp"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityNames" rowHeight="63" id="lbF-7S-Zka" customClass="CityNamesTableViewCell" customModule="HavaDurumu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbF-7S-Zka" id="A0o-at-wDq">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvm-iu-TFo">
+                                                    <rect key="frame" x="395" y="11" width="13" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-TI-pFZ">
+                                                    <rect key="frame" x="357" y="14" width="30" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şehir İsim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25a-ZM-I4e">
+                                                    <rect key="frame" x="20" y="19" width="105" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lvm-iu-TFo" firstAttribute="leading" secondItem="A4q-TI-pFZ" secondAttribute="trailing" constant="8" id="6J0-F8-uPu"/>
+                                                <constraint firstItem="A4q-TI-pFZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="25a-ZM-I4e" secondAttribute="trailing" constant="8" symbolic="YES" id="Hzm-Fu-XPV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="25a-ZM-I4e" secondAttribute="bottom" constant="8" id="Nux-W0-Nib"/>
+                                                <constraint firstItem="lvm-iu-TFo" firstAttribute="top" secondItem="A0o-at-wDq" secondAttribute="topMargin" id="h3D-2i-Yd3"/>
+                                                <constraint firstItem="25a-ZM-I4e" firstAttribute="leading" secondItem="A0o-at-wDq" secondAttribute="leadingMargin" id="hon-8O-WTx"/>
+                                                <constraint firstItem="lvm-iu-TFo" firstAttribute="trailing" secondItem="A0o-at-wDq" secondAttribute="trailingMargin" id="iwQ-Io-ebs"/>
+                                                <constraint firstItem="25a-ZM-I4e" firstAttribute="top" secondItem="A0o-at-wDq" secondAttribute="topMargin" constant="8" id="mBb-cm-KFU"/>
+                                                <constraint firstItem="25a-ZM-I4e" firstAttribute="baseline" secondItem="A4q-TI-pFZ" secondAttribute="baseline" id="pzd-It-7vk"/>
+                                                <constraint firstItem="A4q-TI-pFZ" firstAttribute="centerY" secondItem="lvm-iu-TFo" secondAttribute="centerY" id="rjN-sA-tY1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityNameLabel" destination="25a-ZM-I4e" id="ybG-La-sLP"/>
+                                            <outlet property="degreeLabel" destination="A4q-TI-pFZ" id="Wuu-0Q-mlJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tS-9R-zdY"/>
+                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ub7-NS-Ebu"/>
+                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="o5i-e2-Ocx"/>
+                            <constraint firstItem="BZC-qj-Wqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sWV-YR-4Kw"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Hava Durumu" id="guN-uy-mR2"/>
+                    <connections>
+                        <outlet property="citiesTableView" destination="BZC-qj-Wqj" id="TuG-tR-qVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="82"/>
+            <point key="canvasLocation" x="765.42056074766356" y="81.641468682505405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bgt-Si-DNG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2b-BU-4WM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="6gQ-Gk-1vk">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UN0-Ex-qYu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0w-hp-S95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143.47826086956522" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>
