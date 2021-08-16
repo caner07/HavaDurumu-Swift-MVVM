@@ -10,21 +10,63 @@ import CoreLocation
 import ANActivityIndicator
 class AddCityViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var citiesTableView: UITableView!
+    let viewModel = AddCityViewModel()
     let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         searchBar.delegate = self
+        citiesTableView.delegate = self
+        citiesTableView.dataSource = self
+        viewModel.delegate = self
+        viewModel.getCities()
+        
         
     }
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func searchLocationButtonTapped(_ sender: UIButton) {
+    @IBAction func searchLocationButtonTapped(_ sender: UIBarButtonItem) {
         showIndicator()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
+    
+}
+extension AddCityViewController:AddCityViewModelDelegate{
+    func loading() {
+        showIndicator()
+    }
+    
+    func locationSuccess() {
+        hideIndicator()
+    }
+    
+    func error() {
+        hideIndicator()
+    }
+    
+    func updateCities() {
+        hideIndicator()
+        citiesTableView.reloadData()
+    }
+    
+    
+}
+extension AddCityViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.filteredData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = viewModel.filteredData[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(viewModel.filteredData[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
 }
 extension AddCityViewController:UISearchBarDelegate{
@@ -32,20 +74,8 @@ extension AddCityViewController:UISearchBarDelegate{
         view.endEditing(true)
         
     }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        çağrı
-        
-        self.searchBar.text = ""
-        self.searchBar.placeholder = "Şehir Arayın..."
-        
-    }
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        if searchBar.text != "" {
-            return true
-        }else{
-            return false
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchCity(searchText)
     }
     
 }
@@ -54,7 +84,7 @@ extension AddCityViewController : CLLocationManagerDelegate{
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last{
+        if locations.last != nil{
             locationManager.stopUpdatingLocation()
             lookUpCurrentLocation { place in
                 self.searchBar.text = place?.administrativeArea

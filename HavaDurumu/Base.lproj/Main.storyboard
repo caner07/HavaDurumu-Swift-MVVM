@@ -4,10 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -106,15 +106,86 @@
                             <constraint firstItem="BZC-qj-Wqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sWV-YR-4Kw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hava Durumu" id="guN-uy-mR2"/>
+                    <navigationItem key="navigationItem" title="Hava Durumu" id="guN-uy-mR2">
+                        <barButtonItem key="backBarButtonItem" title="Anasayfa" id="9l1-Fe-wiG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="citiesTableView" destination="BZC-qj-Wqj" id="TuG-tR-qVV"/>
-                        <segue destination="1FP-JW-GxA" kind="showDetail" identifier="addCity" id="lJO-EY-QRV"/>
+                        <segue destination="1FP-JW-GxA" kind="show" identifier="addCity" id="lJO-EY-QRV"/>
+                        <segue destination="HGK-1O-pQJ" kind="show" id="RyD-BJ-9Yj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="765.42056074766356" y="81.641468682505405"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dov-u4-3u4">
+            <objects>
+                <viewController id="HGK-1O-pQJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CTu-zc-agw">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-5h-wMy">
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dFb-Ci-0bo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="165"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KES-Jt-11M">
+                                        <rect key="frame" x="0.0" y="165" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hrD-0y-OHW">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5Ea-PN-dSE" userLabel="Header">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Şehir İsim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYz-82-vBe">
+                                            <rect key="frame" x="160" y="8" width="109" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Açıklama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRK-AD-jp4">
+                                            <rect key="frame" x="193" y="46" width="69" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b1V-pt-Ysp" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="293" width="428" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="akP-Tb-VcB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="akP-Tb-VcB" firstAttribute="trailing" secondItem="9jG-5h-wMy" secondAttribute="trailing" id="EPh-1d-9bc"/>
+                            <constraint firstItem="9jG-5h-wMy" firstAttribute="top" secondItem="akP-Tb-VcB" secondAttribute="top" id="OTA-Iv-PPs"/>
+                            <constraint firstItem="9jG-5h-wMy" firstAttribute="leading" secondItem="akP-Tb-VcB" secondAttribute="leading" id="UXP-xU-gVk"/>
+                            <constraint firstItem="akP-Tb-VcB" firstAttribute="bottom" secondItem="9jG-5h-wMy" secondAttribute="bottom" id="t3N-Vl-r1p"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NV0-Lx-6E1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQ2-M6-Pca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="43"/>
         </scene>
         <!--Add City View Controller-->
         <scene sceneID="4FA-YJ-apG">
@@ -124,50 +195,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Şehir Arayın..." translatesAutoresizingMaskIntoConstraints="NO" id="HBl-id-6w4">
-                                <rect key="frame" x="0.0" y="8" width="361" height="51"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>caner</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wn-nE-54Y">
-                                <rect key="frame" x="369" y="8" width="51" height="51"/>
-                                <state key="normal" title="Vazgeç"/>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="1FP-JW-GxA" eventType="touchUpInside" id="04j-hn-RW8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9E-gI-ltq">
-                                <rect key="frame" x="8" y="75" width="412" height="22"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="Konuma Göre Ara">
-                                    <color key="titleColor" name="AccentColor"/>
-                                    <imageReference key="image" image="location" catalog="system" symbolScale="default"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchLocationButtonTapped:" destination="1FP-JW-GxA" eventType="touchUpInside" id="tbL-6m-olX"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-Xa-OiY">
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Şehir Arayın..." id="HBl-id-6w4">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>caner</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="W3p-jR-uw5" style="IBUITableViewCellStyleDefault" id="0jE-85-il5">
+                                        <rect key="frame" x="0.0" y="75.333333969116211" width="428" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0jE-85-il5" id="kZB-ab-Oly">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W3p-jR-uw5">
+                                                    <rect key="frame" x="20" y="0.0" width="388" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rce-ZX-hyv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HBl-id-6w4" firstAttribute="top" secondItem="Rce-ZX-hyv" secondAttribute="top" constant="8" id="2eZ-Ke-Tof"/>
-                            <constraint firstItem="Rce-ZX-hyv" firstAttribute="trailing" secondItem="9wn-nE-54Y" secondAttribute="trailing" constant="8" id="IXQ-xJ-Wpa"/>
-                            <constraint firstItem="9wn-nE-54Y" firstAttribute="centerY" secondItem="HBl-id-6w4" secondAttribute="centerY" id="Kro-WS-JWb"/>
-                            <constraint firstItem="T9E-gI-ltq" firstAttribute="trailing" secondItem="9wn-nE-54Y" secondAttribute="trailing" id="a4s-bu-Nlc"/>
-                            <constraint firstItem="9wn-nE-54Y" firstAttribute="leading" secondItem="HBl-id-6w4" secondAttribute="trailing" constant="8" id="fhz-vm-MMS"/>
-                            <constraint firstItem="HBl-id-6w4" firstAttribute="leading" secondItem="Rce-ZX-hyv" secondAttribute="leading" id="myj-Xn-EkL"/>
-                            <constraint firstItem="T9E-gI-ltq" firstAttribute="centerX" secondItem="4Du-hQ-KK0" secondAttribute="centerX" id="naR-wb-iaq"/>
-                            <constraint firstItem="T9E-gI-ltq" firstAttribute="top" secondItem="HBl-id-6w4" secondAttribute="bottom" constant="16" id="ux6-dg-jwv"/>
-                            <constraint firstItem="9wn-nE-54Y" firstAttribute="top" secondItem="Rce-ZX-hyv" secondAttribute="top" constant="8" id="v47-8V-hby"/>
+                            <constraint firstItem="vSJ-Xa-OiY" firstAttribute="leading" secondItem="Rce-ZX-hyv" secondAttribute="leading" id="1Hq-XC-Hbq"/>
+                            <constraint firstItem="vSJ-Xa-OiY" firstAttribute="top" secondItem="Rce-ZX-hyv" secondAttribute="top" id="2A4-oz-6Mj"/>
+                            <constraint firstItem="Rce-ZX-hyv" firstAttribute="trailing" secondItem="vSJ-Xa-OiY" secondAttribute="trailing" id="81K-Jz-nOO"/>
+                            <constraint firstItem="Rce-ZX-hyv" firstAttribute="bottom" secondItem="vSJ-Xa-OiY" secondAttribute="bottom" id="cQi-n2-tea"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="V5c-IJ-5uX"/>
+                    <navigationItem key="navigationItem" id="V5c-IJ-5uX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="location" catalog="system" id="cdu-eY-Uqg">
+                            <connections>
+                                <action selector="searchLocationButtonTapped:" destination="1FP-JW-GxA" id="4S8-h2-ChY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="citiesTableView" destination="vSJ-Xa-OiY" id="sld-Ba-YuA"/>
                         <outlet property="searchBar" destination="HBl-id-6w4" id="rcN-RD-KpL"/>
                     </connections>
                 </viewController>
@@ -184,11 +262,6 @@
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="DayBlue"/>
-                        <color key="tintColor" name="DayBlue"/>
-                        <color key="barTintColor" name="DayBlue"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -205,9 +278,6 @@
     </scenes>
     <resources>
         <image name="location" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="DayBlue">
             <color red="0.47499999403953552" green="0.65399998426437378" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

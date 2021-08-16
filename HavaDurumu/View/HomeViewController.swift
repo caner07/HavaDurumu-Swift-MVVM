@@ -14,13 +14,23 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
-        navigationController?.setNavigationBarHidden(true, animated: true)
         
+        WebService().getWeather(cityName: "Çanakkale") { response in
+            
+        }
         
         
     }
     @IBAction func addCityButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "addCity", sender: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 

@@ -10,7 +10,8 @@ import Alamofire
 class WebService {
     
     func getWeather(cityName:String,completion : @escaping ((ResponseModel)?) -> ()){
-        // Türkçe karakterlerden kurtul
+        // Türkçe karakterlerden sorununu çözmek için... çanakkale -> %C3%87anakkale
+        // çanakkale olarak deneyince alamofire "invalid url" hatası veriyor.
         let urlString = "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=\(cityName)"
         let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let url = URL(string: encoded!)
