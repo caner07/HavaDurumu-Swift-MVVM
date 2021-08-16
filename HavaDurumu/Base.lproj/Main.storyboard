@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -108,26 +109,71 @@
                     <navigationItem key="navigationItem" title="Hava Durumu" id="guN-uy-mR2"/>
                     <connections>
                         <outlet property="citiesTableView" destination="BZC-qj-Wqj" id="TuG-tR-qVV"/>
+                        <segue destination="1FP-JW-GxA" kind="showDetail" identifier="addCity" id="lJO-EY-QRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="765.42056074766356" y="81.641468682505405"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NBT-Im-Ift">
+        <!--Add City View Controller-->
+        <scene sceneID="4FA-YJ-apG">
             <objects>
-                <viewController id="JYm-0Z-Un2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sfr-be-VvX">
+                <viewController id="1FP-JW-GxA" customClass="AddCityViewController" customModule="HavaDurumu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Du-hQ-KK0">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ewd-ar-ZDS"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Şehir Arayın..." translatesAutoresizingMaskIntoConstraints="NO" id="HBl-id-6w4">
+                                <rect key="frame" x="0.0" y="8" width="361" height="51"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>caner</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wn-nE-54Y">
+                                <rect key="frame" x="369" y="8" width="51" height="51"/>
+                                <state key="normal" title="Vazgeç"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="1FP-JW-GxA" eventType="touchUpInside" id="04j-hn-RW8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9E-gI-ltq">
+                                <rect key="frame" x="8" y="75" width="412" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Konuma Göre Ara">
+                                    <color key="titleColor" name="AccentColor"/>
+                                    <imageReference key="image" image="location" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchLocationButtonTapped:" destination="1FP-JW-GxA" eventType="touchUpInside" id="tbL-6m-olX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rce-ZX-hyv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HBl-id-6w4" firstAttribute="top" secondItem="Rce-ZX-hyv" secondAttribute="top" constant="8" id="2eZ-Ke-Tof"/>
+                            <constraint firstItem="Rce-ZX-hyv" firstAttribute="trailing" secondItem="9wn-nE-54Y" secondAttribute="trailing" constant="8" id="IXQ-xJ-Wpa"/>
+                            <constraint firstItem="9wn-nE-54Y" firstAttribute="centerY" secondItem="HBl-id-6w4" secondAttribute="centerY" id="Kro-WS-JWb"/>
+                            <constraint firstItem="T9E-gI-ltq" firstAttribute="trailing" secondItem="9wn-nE-54Y" secondAttribute="trailing" id="a4s-bu-Nlc"/>
+                            <constraint firstItem="9wn-nE-54Y" firstAttribute="leading" secondItem="HBl-id-6w4" secondAttribute="trailing" constant="8" id="fhz-vm-MMS"/>
+                            <constraint firstItem="HBl-id-6w4" firstAttribute="leading" secondItem="Rce-ZX-hyv" secondAttribute="leading" id="myj-Xn-EkL"/>
+                            <constraint firstItem="T9E-gI-ltq" firstAttribute="centerX" secondItem="4Du-hQ-KK0" secondAttribute="centerX" id="naR-wb-iaq"/>
+                            <constraint firstItem="T9E-gI-ltq" firstAttribute="top" secondItem="HBl-id-6w4" secondAttribute="bottom" constant="16" id="ux6-dg-jwv"/>
+                            <constraint firstItem="9wn-nE-54Y" firstAttribute="top" secondItem="Rce-ZX-hyv" secondAttribute="top" constant="8" id="v47-8V-hby"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="V5c-IJ-5uX"/>
+                    <connections>
+                        <outlet property="searchBar" destination="HBl-id-6w4" id="rcN-RD-KpL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Blv-Lo-C6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z07-gX-DpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="91"/>
+            <point key="canvasLocation" x="742.99065420560748" y="837.79697624190067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgt-Si-DNG">
@@ -158,11 +204,15 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="DayBlue">
-            <color red="0.40161240100000001" green="0.60618323090000004" blue="0.86277592179999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="location" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="DayBlue">
+            <color red="0.47499999403953552" green="0.65399998426437378" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

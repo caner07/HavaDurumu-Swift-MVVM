@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ANActivityIndicator
 class HomeViewController: UIViewController {
     @IBOutlet weak var citiesTableView: UITableView!
     
@@ -15,8 +15,11 @@ class HomeViewController: UIViewController {
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        
     }
     @IBAction func addCityButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "addCity", sender: self)
     }
     
 

@@ -14,6 +14,8 @@
 		250EBC2626C6571F00D7FD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250EBC2526C6571F00D7FD76 /* Assets.xcassets */; };
 		250EBC2926C6571F00D7FD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250EBC2726C6571F00D7FD76 /* LaunchScreen.storyboard */; };
 		250EBC3726C65B7C00D7FD76 /* CityNamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC3626C65B7C00D7FD76 /* CityNamesTableViewCell.swift */; };
+		250EBC3926C67D0300D7FD76 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EBC3826C67D0300D7FD76 /* AddCityViewController.swift */; };
+		2531FEFA26CA5383002FB7A4 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2531FEF926CA5383002FB7A4 /* AddCityViewModel.swift */; };
 		72E8ABB0804225DF67382A9B /* Pods_HavaDurumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		250EBC2826C6571F00D7FD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		250EBC2A26C6571F00D7FD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		250EBC3626C65B7C00D7FD76 /* CityNamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNamesTableViewCell.swift; sourceTree = "<group>"; };
+		250EBC3826C67D0300D7FD76 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		2531FEF926CA5383002FB7A4 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavaDurumu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27761CBEDEA10C74DC59772F /* Pods-HavaDurumu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.release.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.release.xcconfig"; sourceTree = "<group>"; };
 		E6737A9C54B42732BD735ADF /* Pods-HavaDurumu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.debug.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		250EBC3126C6573E00D7FD76 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2531FEF926CA5383002FB7A4 /* AddCityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			children = (
 				250EBC2026C6571E00D7FD76 /* HomeViewController.swift */,
 				250EBC3626C65B7C00D7FD76 /* CityNamesTableViewCell.swift */,
+				250EBC3826C67D0300D7FD76 /* AddCityViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,10 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250EBC3926C67D0300D7FD76 /* AddCityViewController.swift in Sources */,
 				250EBC2126C6571E00D7FD76 /* HomeViewController.swift in Sources */,
 				250EBC1D26C6571E00D7FD76 /* AppDelegate.swift in Sources */,
 				250EBC1F26C6571E00D7FD76 /* SceneDelegate.swift in Sources */,
 				250EBC3726C65B7C00D7FD76 /* CityNamesTableViewCell.swift in Sources */,
+				2531FEFA26CA5383002FB7A4 /* AddCityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
