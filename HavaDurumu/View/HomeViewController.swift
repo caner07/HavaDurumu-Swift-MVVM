@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         
+        
     }
     @IBAction func addCityButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "addCity", sender: self)
