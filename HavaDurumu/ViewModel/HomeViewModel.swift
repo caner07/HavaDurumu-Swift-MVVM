@@ -8,9 +8,36 @@
 import Foundation
 protocol HomeViewModelDelegate {
     func loading()
-    func success()
+    func success(_ i:Int)
+    
     func error()
 }
 class HomeViewModel{
-    
+    var delegate:HomeViewModelDelegate?
+    let CITIES = "cities"
+    var citiesList = [String]()
+    var weathersList = [ResponseModel]()
+    func getCities(){
+        let d = UserDefaults.standard
+        citiesList = d.object(forKey: CITIES) as? [String] ?? [String]()
+        if citiesList.count != 0 {
+            loadWeather()
+        }
+    }
+    func loadWeather(){
+        self.delegate?.loading()
+        weathersList.removeAll()
+        
+        for city in citiesList{
+            WebService().getWeather(cityName: city) { response in
+                if let response = response{
+                    self.weathersList.append(response)
+                    self.delegate?.success(0)
+                    
+                    
+                }
+                
+            }
+        }
+    }
 }

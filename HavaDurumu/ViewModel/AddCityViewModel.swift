@@ -41,9 +41,14 @@ class AddCityViewModel{
     func saveCity(cityName:String){
         let d = UserDefaults.standard
         var cities = d.object(forKey: CITIES) as? [String]
-        cities?.append(cityName)
+        if cities == nil {
+            cities = [cityName]
+        }else{
+        cities!.append(cityName)
+        }
         d.setValue(cities, forKey: CITIES)
         delegate?.done()
+        
     }
 }
 

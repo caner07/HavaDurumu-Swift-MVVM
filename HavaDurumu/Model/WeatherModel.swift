@@ -8,10 +8,11 @@
 import Foundation
 
 struct ResponseModel:Decodable {
-    let result:[ResultModel]
+    let city:String
+    let result:[WeatherModel]
 }
 
-struct ResultModel:Decodable {
+struct WeatherModel:Decodable {
     let date:String?
     let day:String?
     let icon:String?

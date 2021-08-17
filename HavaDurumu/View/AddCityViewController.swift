@@ -38,7 +38,7 @@ class AddCityViewController: UIViewController {
 }
 extension AddCityViewController:AddCityViewModelDelegate{
     func done() {
-        self.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func loading() {
