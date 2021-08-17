@@ -42,7 +42,8 @@ class HomeViewModel{
     func deleteCity(_ city:Int){
         let d = UserDefaults.standard
         d.removeObject(forKey: CITIES)
-        citiesList.remove(at: city)
+        let removeItem = citiesList.firstIndex(of: weathersList[city].city)!
+        citiesList.remove(at: removeItem)
         d.setValue(citiesList, forKey: CITIES)
         weathersList.remove(at: city)
     }

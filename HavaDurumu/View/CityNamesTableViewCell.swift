@@ -10,6 +10,7 @@ import UIKit
 class CityNamesTableViewCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var weatherIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,6 +18,15 @@ class CityNamesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setUI(cityName:String,degree:String){
+        cityNameLabel.text = cityName
+        degreeLabel.text = degree
+        let image = UIImage(named: "DayBackground")
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleToFill
+        self.backgroundView = imageView
     }
 
 }

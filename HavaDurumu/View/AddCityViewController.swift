@@ -16,6 +16,8 @@ class AddCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.title = "Vazgeç"
+        navigationItem.backButtonTitle = "Vazgeç"
         locationManager.delegate = self
         searchBar.delegate = self
         citiesTableView.delegate = self

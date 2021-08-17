@@ -57,6 +57,7 @@ extension HomeViewController:HomeViewModelDelegate{
     
     func error() {
         hideIndicator()
+        print("error")
     }
     
     
@@ -74,16 +75,15 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.weathersList.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "homeToCity", sender: self)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityNames", for: indexPath) as! CityNamesTableViewCell
         let weather = viewModel.weathersList[indexPath.row]
-        cell.cityNameLabel.text = weather.city
-        cell.degreeLabel.text = "\(weather.result[0].degree!.prefix(2))"
-        let image = UIImage(named: "DayBackground")
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleToFill
-        cell.backgroundView = imageView
+        cell.setUI(cityName: weather.city, degree: "\(weather.result[0].degree!.prefix(2))")
         return cell
     }
     

@@ -77,10 +77,19 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdY-UR-uKh">
+                                                    <rect key="frame" x="239" y="8" width="100" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="6H9-SL-t8T"/>
+                                                    </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lvm-iu-TFo" firstAttribute="leading" secondItem="A4q-TI-pFZ" secondAttribute="trailing" constant="8" id="6J0-F8-uPu"/>
+                                                <constraint firstAttribute="bottom" secondItem="jdY-UR-uKh" secondAttribute="bottom" constant="8" id="Hwn-gr-bqf"/>
                                                 <constraint firstItem="A4q-TI-pFZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="25a-ZM-I4e" secondAttribute="trailing" constant="8" symbolic="YES" id="Hzm-Fu-XPV"/>
+                                                <constraint firstItem="jdY-UR-uKh" firstAttribute="top" secondItem="A0o-at-wDq" secondAttribute="top" constant="8" id="Lkf-ip-2rp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="25a-ZM-I4e" secondAttribute="bottom" constant="8" id="Nux-W0-Nib"/>
                                                 <constraint firstItem="lvm-iu-TFo" firstAttribute="top" secondItem="A0o-at-wDq" secondAttribute="topMargin" id="h3D-2i-Yd3"/>
                                                 <constraint firstItem="25a-ZM-I4e" firstAttribute="leading" secondItem="A0o-at-wDq" secondAttribute="leadingMargin" id="hon-8O-WTx"/>
@@ -88,11 +97,13 @@
                                                 <constraint firstItem="25a-ZM-I4e" firstAttribute="top" secondItem="A0o-at-wDq" secondAttribute="topMargin" constant="8" id="mBb-cm-KFU"/>
                                                 <constraint firstItem="25a-ZM-I4e" firstAttribute="baseline" secondItem="A4q-TI-pFZ" secondAttribute="baseline" id="pzd-It-7vk"/>
                                                 <constraint firstItem="A4q-TI-pFZ" firstAttribute="centerY" secondItem="lvm-iu-TFo" secondAttribute="centerY" id="rjN-sA-tY1"/>
+                                                <constraint firstItem="A4q-TI-pFZ" firstAttribute="leading" secondItem="jdY-UR-uKh" secondAttribute="trailing" constant="8.6666666666666856" id="yNy-FC-7nA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="25a-ZM-I4e" id="ybG-La-sLP"/>
                                             <outlet property="degreeLabel" destination="A4q-TI-pFZ" id="Wuu-0Q-mlJ"/>
+                                            <outlet property="weatherIcon" destination="jdY-UR-uKh" id="D5x-Jw-8Mz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,7 +124,7 @@
                     <connections>
                         <outlet property="citiesTableView" destination="BZC-qj-Wqj" id="TuG-tR-qVV"/>
                         <segue destination="1FP-JW-GxA" kind="show" identifier="addCity" id="lJO-EY-QRV"/>
-                        <segue destination="HGK-1O-pQJ" kind="show" id="RyD-BJ-9Yj"/>
+                        <segue destination="HGK-1O-pQJ" kind="show" identifier="homeToCity" id="RyD-BJ-9Yj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -241,7 +252,7 @@
                     <navigationItem key="navigationItem" id="6RR-uH-YwY">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="zJH-mH-u22">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n0v-Ih-YyO">
-                                <rect key="frame" x="382.66666666666669" y="10.333333333333334" width="25.333333333333314" height="23.666666666666664"/>
+                                <rect key="frame" x="382.66666666666669" y="10" width="25.333333333333314" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <imageReference key="image" image="location" catalog="system" symbolScale="large"/>
