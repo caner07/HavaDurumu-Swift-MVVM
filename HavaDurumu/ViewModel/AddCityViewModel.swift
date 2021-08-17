@@ -10,12 +10,13 @@ protocol AddCityViewModelDelegate {
     func loading()
     func error()
     func updateCities()
+    func done()
 }
 class AddCityViewModel{
     var delegate:AddCityViewModelDelegate?
     var allCities = [String]()
     var filteredData = [String]()
-    
+    let CITIES = "cities"
     
     func getCities(){
         delegate?.loading()
@@ -36,6 +37,13 @@ class AddCityViewModel{
             })
 
         delegate?.updateCities()
+    }
+    func saveCity(cityName:String){
+        let d = UserDefaults.standard
+        var cities = d.object(forKey: CITIES) as? [String]
+        cities?.append(cityName)
+        d.setValue(cities, forKey: CITIES)
+        delegate?.done()
     }
 }
 

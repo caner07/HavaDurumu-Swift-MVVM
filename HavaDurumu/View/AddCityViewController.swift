@@ -26,7 +26,7 @@ class AddCityViewController: UIViewController {
         
     }
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         showIndicator()
@@ -37,6 +37,10 @@ class AddCityViewController: UIViewController {
     
 }
 extension AddCityViewController:AddCityViewModelDelegate{
+    func done() {
+        self.dismiss(animated: true)
+    }
+    
     func loading() {
         showIndicator()
     }
@@ -67,8 +71,9 @@ extension AddCityViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(viewModel.filteredData[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
+        let selectedCity = viewModel.filteredData[indexPath.row]
+        viewModel.saveCity(cityName: selectedCity)
     }
     
     
@@ -91,7 +96,7 @@ extension AddCityViewController : CLLocationManagerDelegate{
         if locations.last != nil{
             locationManager.stopUpdatingLocation()
             lookUpCurrentLocation { place in
-                self.searchBar.text = place?.administrativeArea
+                self.viewModel.saveCity(cityName: (place?.administrativeArea!)!)
                 self.hideIndicator()
             }
         }
