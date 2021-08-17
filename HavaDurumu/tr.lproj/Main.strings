@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Şehir İsim"; ObjectID = "25a-ZM-I4e"; */
+"25a-ZM-I4e.text" = "Şehir İsim";
+
+/* Class = "UIBarButtonItem"; title = "Anasayfa"; ObjectID = "9l1-Fe-wiG"; */
+"9l1-Fe-wiG.title" = "Anasayfa";
+
+/* Class = "UILabel"; text = "25"; ObjectID = "A4q-TI-pFZ"; */
+"A4q-TI-pFZ.text" = "25";
+
+/* Class = "UILabel"; text = "Şehir İsim"; ObjectID = "DYz-82-vBe"; */
+"DYz-82-vBe.text" = "Şehir İsim";
+
+/* Class = "UISearchBar"; placeholder = "Şehir Arayın..."; ObjectID = "HBl-id-6w4"; */
+"HBl-id-6w4.placeholder" = "Şehir Arayın...";
+
+/* Class = "UISearchBar"; HBl-id-6w4.scopeButtonTitles[0] = "Title"; ObjectID = "HBl-id-6w4"; */
+"HBl-id-6w4.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; HBl-id-6w4.scopeButtonTitles[1] = "caner"; ObjectID = "HBl-id-6w4"; */
+"HBl-id-6w4.scopeButtonTitles[1]" = "caner";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "W3p-jR-uw5"; */
+"W3p-jR-uw5.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Hava Durumu"; ObjectID = "guN-uy-mR2"; */
+"guN-uy-mR2.title" = "Hava Durumu";
+
+/* Class = "UILabel"; text = "Açıklama"; ObjectID = "kRK-AD-jp4"; */
+"kRK-AD-jp4.text" = "Açıklama";
+
+/* Class = "UILabel"; text = "°"; ObjectID = "lvm-iu-TFo"; */
+"lvm-iu-TFo.text" = "°";
+
+/* Class = "UIButton"; normalTitle = "Vazgeç"; ObjectID = "osu-EV-7sy"; */
+"osu-EV-7sy.normalTitle" = "Vazgeç";

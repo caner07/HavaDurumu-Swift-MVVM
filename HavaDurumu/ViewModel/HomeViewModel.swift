@@ -27,7 +27,6 @@ class HomeViewModel{
     func loadWeather(){
         self.delegate?.loading()
         weathersList.removeAll()
-        
         for city in citiesList{
             WebService().getWeather(cityName: city) { response in
                 if let response = response{
@@ -39,5 +38,12 @@ class HomeViewModel{
                 
             }
         }
+    }
+    func deleteCity(_ city:Int){
+        let d = UserDefaults.standard
+        d.removeObject(forKey: CITIES)
+        citiesList.remove(at: city)
+        d.setValue(citiesList, forKey: CITIES)
+        weathersList.remove(at: city)
     }
 }

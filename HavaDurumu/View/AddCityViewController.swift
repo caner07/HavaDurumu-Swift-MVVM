@@ -25,9 +25,7 @@ class AddCityViewController: UIViewController {
         
         
     }
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
+    
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         showIndicator()
         locationManager.requestWhenInUseAuthorization()
