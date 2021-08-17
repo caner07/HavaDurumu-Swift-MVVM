@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+
 class WebService {
     
     func getWeather(cityName:String,completion : @escaping ((ResponseModel)?) -> ()){

@@ -25,11 +25,15 @@ class AddCityViewController: UIViewController {
         
         
     }
-    @IBAction func searchLocationButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
         showIndicator()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
+    
     
 }
 extension AddCityViewController:AddCityViewModelDelegate{
