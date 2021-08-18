@@ -34,9 +34,15 @@ class HomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addCity" {
+            
+        }
+    }
     
 
 }
+//MARK: - ViewModel Delegate
 extension HomeViewController:HomeViewModelDelegate{
     
     func success(_ i: Int) {
@@ -62,6 +68,7 @@ extension HomeViewController:HomeViewModelDelegate{
     
     
 }
+//MARK: - UITableView
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
@@ -83,7 +90,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityNames", for: indexPath) as! CityNamesTableViewCell
         let weather = viewModel.weathersList[indexPath.row]
-        cell.setUI(cityName: weather.city, degree: "\(weather.result[0].degree!.prefix(2))")
+        cell.setUI(cityName: weather.city, degree: "\(weather.result[0].degree!.prefix(2))",description: weather.result[0].description!)
         return cell
     }
     

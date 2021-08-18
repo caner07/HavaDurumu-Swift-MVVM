@@ -20,13 +20,41 @@ class CityNamesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUI(cityName:String,degree:String){
+    func setUI(cityName:String,degree:String,description:String){
         cityNameLabel.text = cityName
         degreeLabel.text = degree
-        let image = UIImage(named: "DayBackground")
+        if isItNight() {
+            if description.contains("yağmur") {
+                weatherIcon.image = UIImage(named: "rain")
+            }else{
+                    weatherIcon.image = UIImage(named: "moon")
+            }
+        }else{
+            if description.contains("yağmur") {
+                weatherIcon.image = UIImage(named: "rain")
+            }else{
+                    weatherIcon.image = UIImage(named: "sun")
+            }
+        }
+        
+        
+    }
+    func isItNight() -> Bool{
+        let hour = Calendar.current.component(.hour, from: Date())
+//        GÜNDÜZ
+        if hour > 6 && hour < 18 {
+            let image = UIImage(named: "DayBackground")
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleToFill
+            self.backgroundView = imageView
+            return false
+        }
+//        GECE
+        let image = UIImage(named: "NightBackground")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleToFill
         self.backgroundView = imageView
+        return true
     }
 
 }
