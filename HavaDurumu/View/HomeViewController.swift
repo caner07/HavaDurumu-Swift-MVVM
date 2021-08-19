@@ -35,8 +35,9 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addCity" {
-            
+        if segue.identifier == "homeToCity" {
+            let vc = segue.destination as! WeatherViewController
+            vc.weather = viewModel.selectedCity
         }
     }
     
@@ -83,6 +84,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         return viewModel.weathersList.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectedCity = viewModel.weathersList[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "homeToCity", sender: self)
     }

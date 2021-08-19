@@ -11,7 +11,7 @@ class CityNamesTableViewCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
-    
+    var weatherIconName:String!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -25,17 +25,22 @@ class CityNamesTableViewCell: UITableViewCell {
         degreeLabel.text = degree
         if isItNight() {
             if description.contains("yağmur") {
-                weatherIcon.image = UIImage(named: "rain")
+                weatherIconName = "rain"
+            }else if description.contains("bulut"){
+                weatherIconName = "cloud"
             }else{
-                    weatherIcon.image = UIImage(named: "moon")
+                weatherIconName = "moon"
             }
         }else{
             if description.contains("yağmur") {
-                weatherIcon.image = UIImage(named: "rain")
+                weatherIconName = "rain"
+            }else if description.contains("bulut"){
+                weatherIconName = "cloudy"
             }else{
-                    weatherIcon.image = UIImage(named: "sun")
+                weatherIconName = "sun"
             }
         }
+        weatherIcon.image = UIImage(named: weatherIconName)
         
         
     }

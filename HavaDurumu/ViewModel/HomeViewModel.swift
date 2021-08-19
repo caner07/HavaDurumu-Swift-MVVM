@@ -17,6 +17,7 @@ class HomeViewModel{
     let CITIES = "cities"
     var citiesList = [String]()
     var weathersList = [ResponseModel]()
+    var selectedCity :ResponseModel?
     func getCities(){
         let d = UserDefaults.standard
         citiesList = d.object(forKey: CITIES) as? [String] ?? [String]()

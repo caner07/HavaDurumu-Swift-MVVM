@@ -20,6 +20,8 @@
 		2531FEFE26CA5FBE002FB7A4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2531FEFD26CA5FBE002FB7A4 /* WebService.swift */; };
 		2531FF0026CA8173002FB7A4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2531FEFF26CA8173002FB7A4 /* HomeViewModel.swift */; };
 		2531FF0626CA8B63002FB7A4 /* cities.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2531FF0526CA8B63002FB7A4 /* cities.txt */; };
+		25D0516D26CD319B00556FC2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0516C26CD319B00556FC2 /* WeatherViewController.swift */; };
+		25F5755126CE725C001B70E8 /* DaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5755026CE725C001B70E8 /* DaysCollectionViewCell.swift */; };
 		72E8ABB0804225DF67382A9B /* Pods_HavaDurumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		2531FF0526CA8B63002FB7A4 /* cities.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.txt; sourceTree = "<group>"; };
 		2591CA7726CBF03500904D08 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2591CA7826CBF03500904D08 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		25D0516C26CD319B00556FC2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		25F5755026CE725C001B70E8 /* DaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		26C7B7C7DA7B4711226B4D16 /* Pods_HavaDurumu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavaDurumu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27761CBEDEA10C74DC59772F /* Pods-HavaDurumu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.release.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.release.xcconfig"; sourceTree = "<group>"; };
 		E6737A9C54B42732BD735ADF /* Pods-HavaDurumu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.debug.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				250EBC2026C6571E00D7FD76 /* HomeViewController.swift */,
 				250EBC3626C65B7C00D7FD76 /* CityNamesTableViewCell.swift */,
 				250EBC3826C67D0300D7FD76 /* AddCityViewController.swift */,
+				25D0516C26CD319B00556FC2 /* WeatherViewController.swift */,
+				25F5755026CE725C001B70E8 /* DaysCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F5755126CE725C001B70E8 /* DaysCollectionViewCell.swift in Sources */,
 				250EBC3926C67D0300D7FD76 /* AddCityViewController.swift in Sources */,
+				25D0516D26CD319B00556FC2 /* WeatherViewController.swift in Sources */,
 				2531FF0026CA8173002FB7A4 /* HomeViewModel.swift in Sources */,
 				250EBC2126C6571E00D7FD76 /* HomeViewController.swift in Sources */,
 				2531FEFE26CA5FBE002FB7A4 /* WebService.swift in Sources */,
