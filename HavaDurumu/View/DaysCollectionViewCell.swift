@@ -18,11 +18,11 @@ class DaysCollectionViewCell: UICollectionViewCell {
         dayDegreeLabel.text = "\(degree.prefix(2))°"
         
         if description.contains("yağmur") {
-            dayIcon.image = UIImage(named: "rain")}
+            dayIcon.image = UIImage(named: "yagmur")}
         if description.contains("bulut"){
-            dayIcon.image = UIImage(named: "cloudy")}
+            dayIcon.image = UIImage(named: "parcali_bulutlu_gunduz")}
         else{
-            dayIcon.image = UIImage(named: "sun")
+            dayIcon.image = UIImage(named: "acik_gunduz")
             }
     }
 }

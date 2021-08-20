@@ -27,8 +27,7 @@ class AddCityViewController: UIViewController {
         
         
     }
-    
-    @IBAction func locationButtonTapped(_ sender: UIButton) {
+    @IBAction func locationButtonTapped(_ sender: UIBarButtonItem) {
         showIndicator()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
