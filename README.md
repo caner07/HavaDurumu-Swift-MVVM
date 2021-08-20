@@ -1,7 +1,4 @@
 # HavaDurumu-Swift-MVVM
-Uygulamaya mail adresiniz ile kayıt olduktan sonra sohbet odalarından birini seçip odadaki diğer insanlara mesaj gönderebilir,ayrıca kendiniz de sohbet odası oluşturabilirsiniz.
-Sohbet odaları herkese açık ya da şifre korumalı olabilir. Kayıt ve giriş işlemleri FirebaseAuth kullanarak yapılır. Sohbet Odaları ve gönderilen mesajlar Firebase Firestore ile saklanır. 
-Uygulama MVVM mimarisi ile geliştirildi.
 Uygulama iPhone'ların kendi hava durumu uygulamasına olabildiğince benzer bir uygulama. Anasayfada seçtiğiniz şehirlerin anlık hava durumu bilgilerini görebilirsiniz.
 Yeni şehir eklemek için listeden şehir seçebilir,yazarak şehir araması yapabilir ya da uygulamaya konum izini vererek direk bulunduğunuz konumun kaydedilmesini sağlayabilirsiniz.
 Uygulama MVVM mimarisi ile geliştirildi. Hava durumu bilgileri ücretsiz bir api üzerinden sağlanıyor.
