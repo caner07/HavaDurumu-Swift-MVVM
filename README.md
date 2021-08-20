@@ -1,6 +1,6 @@
 # HavaDurumu-Swift-MVVM
 Uygulama iPhone'ların kendi hava durumu uygulamasına olabildiğince benzer bir uygulama. Anasayfada seçtiğiniz şehirlerin anlık hava durumu bilgilerini görebilirsiniz.
-Yeni şehir eklemek için listeden şehir seçebilir,yazarak şehir araması yapabilir ya da uygulamaya konum izini vererek direk bulunduğunuz konumun kaydedilmesini sağlayabilirsiniz.
+Yeni şehir eklemek için listeden şehir seçebilir,yazarak şehir araması yapabilir ya da uygulamaya konum izini vererek direk bulunduğunuz konumun kaydedilmesini sağlayabilirsiniz. Şehir silmek için ise silmek istediğiniz şehiri sola doğru kaydırmanız yeterli.
 Uygulama MVVM mimarisi ile geliştirildi. Hava durumu bilgileri ücretsiz bir api üzerinden sağlanıyor.
 
 ## Uygulamayı Geliştirirken Kullandığım Kütüphaneler(CocoaPods)
