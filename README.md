@@ -10,10 +10,10 @@ Uygulama MVVM mimarisi ile geliştirildi. Hava durumu bilgileri ücretsiz bir ap
 ## Ekran Görüntüleri
 
 ### Anasayfa(Gündüz saatleri) 
-![Anasayfa gündüz](https://raw.githubusercontent.com/caner07/HavaDurumu-Swift-MVVM/main/HavaDurumu/Screenshots/Simulator_Screen_Shot_-_iPhone_12_Pro_Max_-_2021-08-20_at_14.32.28_240x430.png) ### Anasayfa(Gece saatleri)  
+![Anasayfa gündüz](https://raw.githubusercontent.com/caner07/HavaDurumu-Swift-MVVM/main/HavaDurumu/Screenshots/Simulator_Screen_Shot_-_iPhone_12_Pro_Max_-_2021-08-20_at_14.32.28_240x430.png)
+
+### Anasayfa(Gece saatleri)  
 ![Anasayfa gece](https://raw.githubusercontent.com/caner07/HavaDurumu-Swift-MVVM/main/HavaDurumu/Screenshots/Simulator_Screen_Shot_-_iPhone_12_Pro_Max_-_2021-08-20_at_20.34.16_240x430.png) 
-
-
 
 ### Yeni şehir ekleme
 ![Şehir ekleme](https://raw.githubusercontent.com/caner07/HavaDurumu-Swift-MVVM/main/HavaDurumu/Screenshots/Simulator_Screen_Shot_-_iPhone_12_Pro_Max_-_2021-08-20_at_14.32.36_240x430.png) 
