@@ -124,6 +124,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="citiesTableView" destination="BZC-qj-Wqj" id="TuG-tR-qVV"/>
+                        <outlet property="footer" destination="9nz-fX-CtA" id="34C-Cz-HQn"/>
                         <segue destination="1FP-JW-GxA" kind="show" identifier="addCity" id="lJO-EY-QRV"/>
                         <segue destination="HGK-1O-pQJ" kind="show" identifier="homeToCity" id="RyD-BJ-9Yj"/>
                     </connections>

@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "acik_gece.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "raining.png",
+      "filename" : "acik_gece@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "storm-1.png",
+      "filename" : "acik_gece@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

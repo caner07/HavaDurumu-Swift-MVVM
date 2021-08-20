@@ -12,6 +12,7 @@ class CityNamesTableViewCell: UITableViewCell {
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     var weatherIconName:String!
+    var backgroundName:String!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,42 +25,57 @@ class CityNamesTableViewCell: UITableViewCell {
         cityNameLabel.text = cityName
         degreeLabel.text = degree
         if isItNight() {
-            if description.contains("yağmur") {
-                weatherIconName = "rain"
-            }else if description.contains("bulut"){
-                weatherIconName = "cloud"
-            }else{
-                weatherIconName = "moon"
-            }
+            setNightUI(description)
         }else{
-            if description.contains("yağmur") {
-                weatherIconName = "rain"
-            }else if description.contains("bulut"){
-                weatherIconName = "cloudy"
-            }else{
-                weatherIconName = "sun"
-            }
+            setDayUI(description)
         }
-        weatherIcon.image = UIImage(named: weatherIconName)
-        
-        
     }
     func isItNight() -> Bool{
         let hour = Calendar.current.component(.hour, from: Date())
 //        GÜNDÜZ
         if hour > 6 && hour < 18 {
-            let image = UIImage(named: "DayBackground")
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = .scaleToFill
-            self.backgroundView = imageView
+            
             return false
         }
 //        GECE
-        let image = UIImage(named: "NightBackground")
+        
+        return true
+    }
+    func setNightUI(_ description:String){
+        if description.contains("yağmur") {
+            weatherIconName = "yagmur"
+            backgroundName = "yagmurlu_gece_bg"
+        }else if description.contains("bulut"){
+            weatherIconName = "parcali_bulutlu_gece"
+            backgroundName = "parcali_bulutlu_gece_bg"
+        }else{
+            weatherIconName = "acik_gece"
+            backgroundName = "acik_gece_bg"
+        }
+        let image = UIImage(named: backgroundName)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleToFill
         self.backgroundView = imageView
-        return true
+        weatherIcon.image = UIImage(named: weatherIconName)
     }
-
+    
+    
+    func setDayUI(_ description:String){
+        if description.contains("yağmur") {
+            weatherIconName = "yagmur"
+            backgroundName = "yagmurlu_gunduz_bg"
+        }else if description.contains("bulut"){
+            weatherIconName = "parcali_bulutlu_gunduz"
+            backgroundName = "parcali_bulutlu_gunduz_bg"
+        }else{
+            weatherIconName = "acik_gunduz"
+            backgroundName = "acik_gunduz_bg"
+        }
+        let image = UIImage(named: backgroundName)
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleToFill
+        self.backgroundView = imageView
+        weatherIcon.image = UIImage(named: weatherIconName)
+    }
+    
 }

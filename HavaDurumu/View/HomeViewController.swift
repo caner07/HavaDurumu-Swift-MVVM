@@ -9,12 +9,14 @@ import UIKit
 import ANActivityIndicator
 class HomeViewController: UIViewController {
     @IBOutlet weak var citiesTableView: UITableView!
+    @IBOutlet weak var footer: UIView!
     let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
         viewModel.delegate = self
+        isItNight()
     }
     @IBAction func addCityButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "addCity", sender: self)
@@ -39,6 +41,28 @@ class HomeViewController: UIViewController {
             let vc = segue.destination as! WeatherViewController
             vc.weather = viewModel.selectedCity
         }
+    }
+    func isItNight(){
+        let hour = Calendar.current.component(.hour, from: Date())
+//        GÜNDÜZ
+        if hour > 6 && hour < 18 {
+            
+            setDayUI()
+        }
+//        GECE
+        else{
+            setNightUI()
+        }
+    }
+    func setNightUI(){
+        self.view.backgroundColor = UIColor(named: "NightBlue")
+        footer.backgroundColor = UIColor(named: "NightBlue")
+        citiesTableView.backgroundColor = UIColor(named: "NightBlue")
+    }
+    func setDayUI(){
+        self.view.backgroundColor = UIColor(named: "DayBlue")
+        footer.backgroundColor = UIColor(named: "DayBlue")
+        citiesTableView.backgroundColor = UIColor(named: "DayBlue")
     }
     
 
