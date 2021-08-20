@@ -33,36 +33,43 @@ class WeatherViewController: UIViewController {
         maxDegreeLabel.text = "\(todayWeather.max!.prefix(2))°"
         minDegreeLabel.text = "\(todayWeather.min!.prefix(2))°"
         humidityLabel.text = "% \(todayWeather.humidity!.prefix(2))"
-        
-        if todayWeather.description!.contains("yağmur") {
-            weatherIconImageView.image = UIImage(named: "rain")
-            return
-        }
-        if isItNight() {
-            if todayWeather.description!.contains("bulut"){
-                weatherIconImageView.image = UIImage(named: "cloud")
-            }else{
-                weatherIconImageView.image = UIImage(named: "moon")
-            }
-        }
-//        gündüz
-        else{
-            if todayWeather.description!.contains("bulut"){
-                weatherIconImageView.image = UIImage(named: "cloudy")
-            }else{
-                weatherIconImageView.image = UIImage(named: "sun")
-            }
-        }
+        isItNight()
         
     }
-    func isItNight()->Bool{
+    func isItNight(){
         let hour = Calendar.current.component(.hour, from: Date())
-        print(hour)
+//        GÜNDÜZ
         if hour > 6 && hour < 18 {
-            return false
+            setDayUI()
         }
-        return true
-        
+//        GECE
+        else{
+            setNightUI()
+        }
+    }
+    func setNightUI(){
+        self.view.backgroundColor = UIColor(named: "NightBlue")
+        daysCollectionView.backgroundColor = UIColor(named: "NightBlue")
+        let description = weather.result[0].description!
+        if description.contains("yağmur") {
+            weatherIconImageView.image = UIImage(named: "yagmur")
+        }else if description.contains("bulut"){
+            weatherIconImageView.image = UIImage(named: "parcali_bulutlu_gece")
+        }else{
+            weatherIconImageView.image = UIImage(named: "acik_gece")
+        }
+    }
+    func setDayUI(){
+        self.view.backgroundColor = UIColor(named: "DayBlue")
+        daysCollectionView.backgroundColor = UIColor(named: "DayBlue")
+        let description = weather.result[0].description!
+        if description.contains("yağmur") {
+            weatherIconImageView.image = UIImage(named: "yagmur")
+        }else if description.contains("bulut"){
+            weatherIconImageView.image = UIImage(named: "parcali_bulutlu_gunduz")
+        }else{
+            weatherIconImageView.image = UIImage(named: "acik_gunduz")
+        }
     }
     
 

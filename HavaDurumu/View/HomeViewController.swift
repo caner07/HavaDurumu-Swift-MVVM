@@ -58,11 +58,13 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = UIColor(named: "NightBlue")
         footer.backgroundColor = UIColor(named: "NightBlue")
         citiesTableView.backgroundColor = UIColor(named: "NightBlue")
+        
     }
     func setDayUI(){
         self.view.backgroundColor = UIColor(named: "DayBlue")
         footer.backgroundColor = UIColor(named: "DayBlue")
         citiesTableView.backgroundColor = UIColor(named: "DayBlue")
+        
     }
     
 
